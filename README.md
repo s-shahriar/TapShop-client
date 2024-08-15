@@ -1,43 +1,25 @@
-# Welcome to Quick Send
+# Welcome to Tap Shop
 
-## About Quick Send
+## About Tap Shop
 
-Quick Send is an efficient money transfer platform designed to facilitate quick and secure transactions between users. With Quick Send, users can easily send money, manage their transactions, and ensure seamless financial operations.
+Tap Shop is an online shopping platform designed to provide a seamless and enjoyable shopping experience. Tap Shop allows users to browse and search for a wide variety of products, apply advanced filters, and sort items to find exactly what they need. With features such as dynamic pagination, real-time updates, and intuitive navigation, Tap Shop ensures a user-friendly interface for efficient and enjoyable shopping. Whether you're exploring categories, comparing brands, or looking for specific items, Tap Shop offers a comprehensive and responsive platform to meet all your shopping needs.
 
-**Live Link**: [Quick Send](https://mfs-project-d9f9e.web.app/)
-
-# CAUTION
-
-**For browsing the site as an Admin, please use the following credentials:**
-
-```
-Email: admin@admin.com
-PIN: 12345
-```
-
-**For browsing the site as an Agent, please use the following (you can register as a new agent in site too):**
-
-```
-Email: one@agent.com
-//or
-Phone Number: 01234567891
-PIN: 12345
-```
+**Live Link**: [Tap Shop](https://ecom-edeb3.web.app/)
 
 ## Installation
 
-To install the Asset Mart project on your local machine, follow these steps:
+To install the Tap Shop project on your local machine, follow these steps:
 
 1. **Clone the Repository**: Clone the repository to your local machine using the following command:
 
    ```
-   git clone https://github.com/s-shahriar/Quick−Send.git
+   git clone https://github.com/s-shahriar/TapShop-client
    ```
 
 2. **Navigate to the Project Directory**: Change to the project directory:
 
    ```
-   cd quick-send
+   cd tapshop-client
    ```
 
 3. **Install Dependencies**: Install the required dependencies for both the client and server:
@@ -79,13 +61,12 @@ To install the Asset Mart project on your local machine, follow these steps:
 
 ### Features
 
-- **Send Money**: Easily transfer money to other users with secure PIN and JWT verification.
-- **Transaction Management**: Agents can manage and approve/deny transaction requests efficiently.
-- **Cash-In Requests**: Users can request to cash in through agents without any fees.
-- **Role-Based Navigation**: Dynamic navbar options based on user roles (User, Agent, Admin).
+- **Product Browsing**: Explore a wide range of products with a user-friendly interface and intuitive navigation.
+- **Search Functionality**: Quickly find products by name with an efficient search bar.
+- **Advanced Filters**: Apply filters based on brand, category, and price range to refine your product search.
+- **Sorting Options**: Sort products by price (low to high, high to low) or date added (newest first).
 - **Real-Time Updates**: All transactions and status changes are reflected in real-time.
-- **User Management**: Admins can manage users and their transaction history.
-- **Search and Filters**: Advanced search and filtering capabilities for assets and requests, allowing users to find items by name, type, and status.
+- **Pagination**: Browse products across multiple pages with a responsive pagination system.
 
 ### Libraries Used
 
@@ -104,24 +85,6 @@ To install the Asset Mart project on your local machine, follow these steps:
 - **UI Library**: Tailwind CSS, Flowbite
 - **Back-end**: ExpressJS
 - **Database**: MongoDB
-
-## Usage
-
-### For Admins
-
-- **Manage Users**: Add, update, or delete users and view their transaction history.
-
-### For Agents
-
-- **Transaction Management**: Approve or deny cash-in and cash-out requests from users.
-
-### For Users
-
-- **Send Money**: Transfer money to other users securely.
-- **Request Cash-In**: Request to cash in through agents without any fees.
-- **View Transactions**: Check the status of your transactions and interact with them.
-
----
 
 ## Contributing
 
