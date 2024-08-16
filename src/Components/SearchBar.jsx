@@ -14,11 +14,14 @@ const SearchBar = ({ onSearch, searchTerm, onSearchReset }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(input);
-    onSearchReset(); 
+    onSearchReset();
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center mx-auto max-w-xl py-2 px-6 rounded-full bg-gray-50 border">
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center mx-auto max-w-xl py-2 px-6 rounded-full bg-gray-50 border"
+    >
       <input
         type="text"
         placeholder="Search anything"

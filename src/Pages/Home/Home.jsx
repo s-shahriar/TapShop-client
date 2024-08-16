@@ -11,7 +11,6 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Home = () => {
   const axiosPublic = useAxiosPublic();
-
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,13 +33,11 @@ const Home = () => {
         const response = await axiosPublic("/products");
         const data = response.data;
         setProducts(data);
-        setFilteredProducts(data); // Initially set to all products
-
+        setFilteredProducts(data);
         const uniqueBrands = [...new Set(data.map((product) => product.Brand))];
         const uniqueCategories = [
           ...new Set(data.map((product) => product.Category)),
         ];
-
         setBrands(uniqueBrands);
         setCategories(uniqueCategories);
       } catch (error) {
@@ -110,6 +107,11 @@ const Home = () => {
     setSortOption("dateNewestFirst");
   };
 
+  const handleSearchReset = () => {
+    setAppliedFilters({ brand: "", category: "", priceRange: [0, 1500] });
+    setSortOption("dateNewestFirst");
+  };
+
   const handleFilter = (filters) => {
     setAppliedFilters(filters);
     setCurrentPage(1);
@@ -155,7 +157,11 @@ const Home = () => {
         <h1 className="font-bold text-5xl mb-10 text-center text-primary">
           Browse Our Products
         </h1>
-        <SearchBar onSearch={handleSearch} searchTerm={searchTerm} />
+        <SearchBar
+          onSearch={handleSearch}
+          searchTerm={searchTerm}
+          onSearchReset={handleSearchReset}
+        />
         <div className="my-4 flex flex-wrap gap-4 items-center justify-center">
           <Sort onSort={handleSort} sortOption={sortOption} />
           <Filter
@@ -163,6 +169,8 @@ const Home = () => {
             onFilterReset={handleFilterReset}
             brands={brands}
             categories={categories}
+            onSearchReset={handleSearchReset}
+            appliedFilters={appliedFilters} 
           />
         </div>
         {currentProducts.length > 0 ? (

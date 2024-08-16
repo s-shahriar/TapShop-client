@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const Filter = ({ onFilter, onFilterReset, brands, categories, onSearchReset }) => {
+const Filter = ({
+  onFilter,
+  onFilterReset,
+  brands,
+  categories,
+  onSearchReset,
+  appliedFilters,  // Receive appliedFilters prop
+}) => {
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1500]);
+
+  // Update filter values when appliedFilters changes
+  useEffect(() => {
+    setSelectedBrand(appliedFilters.brand);
+    setSelectedCategory(appliedFilters.category);
+    setPriceRange(appliedFilters.priceRange);
+  }, [appliedFilters]);
 
   const handleFilter = () => {
     onFilter({
@@ -18,7 +32,7 @@ const Filter = ({ onFilter, onFilterReset, brands, categories, onSearchReset }) 
     setSelectedCategory("");
     setPriceRange([0, 1500]);
     onFilterReset();
-    onSearchReset(); 
+    onSearchReset();
   };
 
   return (
