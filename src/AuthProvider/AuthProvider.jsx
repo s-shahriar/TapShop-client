@@ -41,8 +41,6 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
-
-
   const logOut = async () => {
     setLoading(true);
     const res = await axiosPublic("/logout");
